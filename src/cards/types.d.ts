@@ -22,6 +22,7 @@ export type StatCardOptions = CommonOptions & {
   line_height: number | string;
   custom_title: string;
   disable_animations: boolean;
+  text_bold: boolean;
 };
 
 export type RepoCardOptions = CommonOptions & {
@@ -49,3 +50,14 @@ type WakaTimeOptions = CommonOptions & {
   layout: "compact" | "normal";
   langs_count: number;
 };
+
+export type CreateTextNodeOptions = {
+  icon: any;
+  label: string;
+  value: string;
+  id: string;
+  index: number;
+  showIcons: boolean;
+  shiftValuePos: number;
+  bold: boolean
+} 

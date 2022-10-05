@@ -18,7 +18,7 @@ import { repoCardLocales } from "../translations";
  * @param {string} textColor
  * @returns {string}
  */
-const getBadgeSVG = (label, textColor) => `
+const getBadgeSVG = (label: string, textColor: string) => `
   <g data-testid="badge" class="badge" transform="translate(320, -18)">
     <rect stroke="${textColor}" stroke-width="1" width="70" height="20" x="-12" y="-14" ry="10" rx="10"></rect>
     <text
@@ -38,7 +38,7 @@ const getBadgeSVG = (label, textColor) => `
  * @param {string} langColor
  * @returns {string}
  */
-const createLanguageNode = (langName, langColor) => {
+const createLanguageNode = (langName: string, langColor: string) => {
   return `
   <g data-testid="primary-lang">
     <circle data-testid="lang-color" cx="0" cy="-5" r="6" fill="${langColor}" />
@@ -48,7 +48,7 @@ const createLanguageNode = (langName, langColor) => {
 };
 
 const ICON_SIZE = 16;
-const iconWithLabel = (icon, label, testid) => {
+const iconWithLabel = (icon: string, label: string|number, testid: string) => {
   if (label <= 0) return "";
   const iconSvg = `
     <svg
@@ -71,7 +71,7 @@ const iconWithLabel = (icon, label, testid) => {
  * @param {Partial<import("./types").RepoCardOptions>} options
  * @returns {string}
  */
-const renderRepoCard = (repo, options = {}) => {
+const renderRepoCard = (repo: import('../fetchers/types').RepositoryData, options: Partial<import("./types").RepoCardOptions> = {}): string => {
   const {
     name,
     nameWithOwner,
@@ -104,7 +104,7 @@ const renderRepoCard = (repo, options = {}) => {
   const multiLineDescription = wrapTextMultiline(desc);
   const descriptionLines = multiLineDescription.length;
   const descriptionSvg = multiLineDescription
-    .map((line) => `<tspan dy="1.2em" x="25">${encodeHTML(line)}</tspan>`)
+    .map((line: string) => `<tspan dy="1.2em" x="25">${encodeHTML(line)}</tspan>`)
     .join("");
 
   const height =

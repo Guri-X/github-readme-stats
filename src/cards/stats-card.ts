@@ -25,7 +25,7 @@ import { statCardLocales } from "../translations";
  * @param {boolean} createTextNodeParams.bold Whether to bold the label.
  * @returns
  */
-const createTextNode = ({
+const createTextNode = (textNode: import('./types').CreateTextNodeOptions ) => ({
   icon,
   label,
   value,
@@ -34,7 +34,7 @@ const createTextNode = ({
   showIcons,
   shiftValuePos,
   bold,
-}) => {
+} = textNode) => {
   const kValue = kFormatter(value);
   const staggerDelay = (index + 3) * 150;
 
@@ -67,7 +67,7 @@ const createTextNode = ({
  * @param {Partial<import("./types").StatCardOptions>} options
  * @returns {string}
  */
-const renderStatsCard = (stats = {}, options = { hide: [] }) => {
+const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> = {}, options: Partial<import("./types").StatCardOptions> = { hide: [] }): string => {
   const {
     name,
     totalStars,
