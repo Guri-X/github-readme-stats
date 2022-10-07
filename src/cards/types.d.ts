@@ -49,3 +49,5 @@ type WakaTimeOptions = CommonOptions & {
   layout: "compact" | "normal";
   langs_count: number;
 };
+
+declare module "emoji-name-map";
