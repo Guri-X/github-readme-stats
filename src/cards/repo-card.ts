@@ -89,7 +89,7 @@ const renderRepoCard = (repo: import('../fetchers/types').RepositoryData, option
     text_color,
     bg_color,
     show_owner = false,
-    theme = "default_repocard",
+    theme,
     border_radius,
     border_color,
     locale,

@@ -1,11 +1,12 @@
 type ThemeNames = keyof typeof import("../../themes/index");
+import type { ThemeEnum } from "../../themes/index";
 
 export type CommonOptions = {
   title_color: string;
   icon_color: string;
   text_color: string;
   bg_color: string;
-  theme: ThemeNames;
+  theme: ThemeEnum;
   border_radius: number;
   border_color: string;
   locale: string;
@@ -63,3 +64,4 @@ export type CreateTextNodeOptions = {
 } 
 
 declare module "emoji-name-map";
+export type ThemeEnum = keyof typeof themes;

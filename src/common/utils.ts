@@ -210,11 +210,11 @@ function getCardColors({
   icon_color?: string;
   bg_color?: string;
   border_color?: string;
-  theme: ThemeEnum;
+  theme: ThemeEnum | undefined;
   fallbackTheme?: "default";
 }) {
   const defaultTheme = themes[fallbackTheme];
-  const selectedTheme = themes[theme] || defaultTheme;
+  const selectedTheme = themes[theme ?? "default"] || defaultTheme;
   const defaultBorderColor =
     selectedTheme.border_color || defaultTheme.border_color;
 

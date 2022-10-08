@@ -7,10 +7,10 @@ export class I18n {
     locale,
     translations,
   }: {
-    locale: string;
+    locale: string | undefined;
     translations: Record<string, Record<string, string>>;
   }) {
-    this.locale = locale;
+    this.locale = locale!;
     this.translations = translations;
     this.fallbackLocale = "en";
   }
