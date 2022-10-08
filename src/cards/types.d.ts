@@ -61,3 +61,5 @@ export type CreateTextNodeOptions = {
   shiftValuePos: number;
   bold: boolean
 } 
+
+declare module "emoji-name-map";
