@@ -314,4 +314,3 @@ const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> =
 };
 
 export { renderStatsCard };
-export default renderStatsCard;

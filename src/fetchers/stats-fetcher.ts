@@ -165,8 +165,8 @@ const totalStarsFetcher = async (username, repoToHide) => {
 
 /**
  * @param {string} username
- * @param {boolean} count_private
- * @param {boolean} include_all_commits
+ * @param {boolean | string} count_private
+ * @param {boolean | string} include_all_commits
  * @returns {Promise<import("./types").StatsData>}
  */
 async function fetchStats(

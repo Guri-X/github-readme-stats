@@ -1,10 +1,10 @@
+import api from "@/api/index";
 import { jest } from "@jest/globals";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import api from "../api/index";
-import { calculateRank } from "../src/calculateRank";
-import { renderStatsCard } from "../src/cards/stats-card";
-import { CONSTANTS, renderError } from "../src/common/utils";
+import { calculateRank } from "../src/calculateRank.js";
+import { renderStatsCard } from "../src/cards/stats-card.js";
+import { CONSTANTS, renderError } from "../src/common/utils.js";
 
 const stats = {
   name: "Anurag Hazra",
@@ -13,7 +13,7 @@ const stats = {
   totalIssues: 300,
   totalPRs: 400,
   contributedTo: 500,
-  rank: null,
+  rank: { level: "S+", score: 99.9 },
 };
 stats.rank = calculateRank({
   totalCommits: stats.totalCommits,
