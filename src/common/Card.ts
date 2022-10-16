@@ -1,22 +1,6 @@
 import { getAnimations } from "../getStyles";
 import { encodeHTML, flexLayout } from "./utils";
 
-<<<<<<< HEAD
-export class Card {
-  width: number;
-  height: number;
-  hideBorder: boolean;
-  hideTitle: boolean;
-  border_radius: number;
-  colors: any;
-  title: any;
-  css: string;
-  paddingX: number;
-  paddingY: number;
-  titlePrefixIcon: string;
-  animations: boolean;
-  a11yTitle: string;
-=======
 /** Card colors. */
 export interface CardColors {
   /** Title color. */
@@ -88,7 +72,6 @@ export class Card {
   /** Accessibility label title. */
   a11yTitle: string;
   /** Accessibility label description. */
->>>>>>> upstream/ts_migration_base
   a11yDesc: string;
   /**
    * @param {object} args

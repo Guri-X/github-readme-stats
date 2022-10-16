@@ -27,15 +27,7 @@ type Fetcher = (
  * @returns Promise<retryer>
  */
 export const retryer = async (
-<<<<<<< HEAD
-  fetcher: (
-    variables: AxiosRequestHeaders,
-    token: string,
-    retries?: number,
-  ) => AxiosPromise<any>,
-=======
   fetcher: Fetcher,
->>>>>>> upstream/ts_migration_base
   variables: AxiosRequestHeaders,
   retries = 0,
 ): Promise<any> => {
