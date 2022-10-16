@@ -210,7 +210,11 @@ function getCardColors({
   icon_color?: string;
   bg_color?: string;
   border_color?: string;
+<<<<<<< HEAD
   theme: ThemeEnum | undefined;
+=======
+  theme: ThemeEnum;
+>>>>>>> upstream/ts_migration_base
   fallbackTheme?: "default";
 }) {
   const defaultTheme = themes[fallbackTheme];
@@ -298,7 +302,11 @@ const SECONDARY_ERROR_MESSAGES = {
 
 class CustomError extends Error {
   type: string;
+<<<<<<< HEAD
   secondaryMessage: string;
+=======
+  secondaryMessage?: string;
+>>>>>>> upstream/ts_migration_base
   /**
    * @param {string} message
    * @param {string} type
@@ -315,7 +323,11 @@ class CustomError extends Error {
 
 class MissingParamError extends Error {
   missedParams: string[];
+<<<<<<< HEAD
   secondaryMessage: string | undefined;
+=======
+  secondaryMessage?: string;
+>>>>>>> upstream/ts_migration_base
   /**
    * @param {string[]} missedParams
    * @param {string?=} secondaryMessage

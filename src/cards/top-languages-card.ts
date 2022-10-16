@@ -1,4 +1,5 @@
 // @ts-check
+import { Lang } from "src/fetchers/types";
 import { Card } from "../common/Card";
 import { createProgressNode } from "../common/createProgressNode";
 import { I18n } from "../common/I18n";
@@ -25,7 +26,7 @@ const CARD_PADDING = 25;
 /**
  * @param {Lang[]} arr
  */
-const getLongestLang = (arr) =>
+const getLongestLang = (arr: Lang[]) =>
   arr.reduce(
     (savedLang, lang) =>
       lang.name.length > savedLang.name.length ? lang : savedLang,

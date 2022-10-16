@@ -112,7 +112,7 @@ const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> =
       theme,
     });
 
-  const apostrophe = ["x", "s"].includes(name.slice(-1).toLocaleLowerCase())
+  const apostrophe = ["x", "s"].includes(name!.slice(-1).toLocaleLowerCase())
     ? ""
     : "s";
   const i18n = new I18n({
@@ -169,7 +169,7 @@ const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> =
     "de",
     "nl",
   ];
-  const isLongLocale = longLocales.includes(locale) === true;
+  const isLongLocale = longLocales.includes(locale!) === true;
 
   // filter out hidden stats defined by user & create the text nodes
   const statItems = Object.keys(STATS)
@@ -195,7 +195,7 @@ const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> =
 
   // the better user's score the the rank will be closer to zero so
   // subtracting 100 to get the progress in 100%
-  const progress = 100 - rank.score;
+  const progress = 100 - rank!.score;
   const cssStyles = getStyles({
     titleColor,
     textColor,
@@ -218,8 +218,8 @@ const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> =
     ? clampValue(50 /* padding */ + calculateTextWidth() * 2, 270, Infinity)
     : 340 + iconWidth;
   const defaultCardWidth = hide_rank ? 270 : 495;
-  let width = isNaN(card_width) ? defaultCardWidth : card_width;
-  if (width < minCardWidth) {
+  let width = isNaN(card_width!) ? defaultCardWidth : card_width;
+  if (width! < minCardWidth) {
     width = minCardWidth;
   }
 
@@ -254,10 +254,10 @@ const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> =
    * @returns {number} - Rank circle translation value.
    */
   const calculateRankXTranslation = () => {
-    if (width < 450) {
-      return width - 95 + (45 * (450 - 340)) / 110;
+    if (width! < 450) {
+      return width! - 95 + (45 * (450 - 340)) / 110;
     } else {
-      return width - 95;
+      return width! - 95;
     }
   };
 
@@ -297,7 +297,7 @@ const renderStatsCard = (stats: Partial<import('../fetchers/types').StatsData> =
     .join(", ");
 
   card.setAccessibilityLabel({
-    title: `${card.title}, Rank: ${rank.level}`,
+    title: `${card.title}, Rank: ${rank!.level}`,
     desc: labels,
   });
 

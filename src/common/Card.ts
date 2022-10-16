@@ -1,6 +1,7 @@
 import { getAnimations } from "../getStyles";
 import { encodeHTML, flexLayout } from "./utils";
 
+<<<<<<< HEAD
 export class Card {
   width: number;
   height: number;
@@ -15,6 +16,79 @@ export class Card {
   titlePrefixIcon: string;
   animations: boolean;
   a11yTitle: string;
+=======
+/** Card colors. */
+export interface CardColors {
+  /** Title color. */
+  titleColor: string;
+  /** Text color. */
+  textColor: string;
+  /** Icon color. */
+  iconColor: string;
+  /** Background color. */
+  bgColor: string;
+  /** Border color. */
+  borderColor: string;
+}
+
+/** Accessibility label. */
+interface AccessibilityLabel {
+  /** The label to display. */
+  title: string;
+  /** The value to display. */
+  desc: string;
+}
+
+/** Card properties. */
+interface CardProps {
+  /** Card width. */
+  width: number;
+  /** Card height. */
+  height: number;
+  /** Card border radius. */
+  border_radius: number;
+  /** Card colors. */
+  colors: CardColors | {};
+  /** Card title. */
+  customTitle?: string;
+  /** Card default title. */
+  defaultTitle?: string;
+  /** Card title prefix icon. */
+  titlePrefixIcon?: string;
+}
+
+/**
+ * Card class.
+ */
+export class Card {
+  /** Card width. */
+  width: number;
+  /** Card height. */
+  height: number;
+  /** Whether the card border is hidden. */
+  hideBorder: boolean;
+  /** Whether the card title is hidden. */
+  hideTitle: boolean;
+  /** Border radius. */
+  border_radius: number;
+  /** Card colors. */
+  colors: CardColors | {};
+  /** Card title. */
+  title: string;
+  /** Card css. */
+  css: string;
+  /** Card x padding. */
+  paddingX: number;
+  /** Card y padding. */
+  paddingY: number;
+  /** Card title prefix icon. */
+  titlePrefixIcon?: string;
+  /** Whether the card is animated. */
+  animations: boolean;
+  /** Accessibility label title. */
+  a11yTitle: string;
+  /** Accessibility label description. */
+>>>>>>> upstream/ts_migration_base
   a11yDesc: string;
   /**
    * @param {object} args
@@ -33,8 +107,13 @@ export class Card {
     colors = {},
     customTitle = "",
     defaultTitle = "",
+<<<<<<< HEAD
     titlePrefixIcon = "",
   }) {
+=======
+    titlePrefixIcon,
+  }: CardProps) {
+>>>>>>> upstream/ts_migration_base
     this.width = width;
     this.height = height;
 
@@ -67,7 +146,11 @@ export class Card {
   /**
    * @param {{title: string, desc: string}} prop
    */
+<<<<<<< HEAD
   setAccessibilityLabel({ title, desc }: Record<string, string>) {
+=======
+  setAccessibilityLabel({ title, desc }: AccessibilityLabel) {
+>>>>>>> upstream/ts_migration_base
     this.a11yTitle = title;
     this.a11yDesc = desc;
   }
