@@ -91,12 +91,17 @@ export class Card {
     customTitle = "",
     defaultTitle = "",
 <<<<<<< HEAD
+<<<<<<< HEAD
     titlePrefixIcon = "",
   }) {
 =======
     titlePrefixIcon,
   }: CardProps) {
 >>>>>>> upstream/ts_migration_base
+=======
+    titlePrefixIcon,
+  }: CardProps) {
+>>>>>>> hwang/ts-migration-base-main
     this.width = width;
     this.height = height;
 
@@ -130,10 +135,14 @@ export class Card {
    * @param {{title: string, desc: string}} prop
    */
 <<<<<<< HEAD
+<<<<<<< HEAD
   setAccessibilityLabel({ title, desc }: Record<string, string>) {
 =======
   setAccessibilityLabel({ title, desc }: AccessibilityLabel) {
 >>>>>>> upstream/ts_migration_base
+=======
+  setAccessibilityLabel({ title, desc }: AccessibilityLabel) {
+>>>>>>> hwang/ts-migration-base-main
     this.a11yTitle = title;
     this.a11yDesc = desc;
   }
